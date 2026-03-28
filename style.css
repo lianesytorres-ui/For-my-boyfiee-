@@ -1,0 +1,82 @@
+body {
+  background-color: #ffe6f0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+/* Envelope styles */
+.envelope {
+  margin-top: 100px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 250px;
+}
+
+.top-flap {
+  width: 0; 
+  height: 0; 
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  border-bottom: 80px solid #ff3399;
+  transition: all 0.6s ease;
+}
+
+.bottom-envelope {
+  background: #ff66b2;
+  height: 120px;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  transition: all 0.6s ease;
+}
+
+/* Open envelope animation */
+.envelope.open .top-flap {
+  transform: rotateX(180deg) translateY(-40px);
+}
+
+/* Letter */
+.letter {
+  margin-top: 50px;
+  background-color: #fff0f5;
+  border: 2px solid #ff66b2;
+  padding: 25px;
+  border-radius: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Floating hearts */
+.hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hearts span {
+  position: absolute;
+  color: #ff3399;
+  font-size: 20px;
+  opacity: 0.8;
+  animation-name: floatHearts;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity:0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity:0; }
+  }
